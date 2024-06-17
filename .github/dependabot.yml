@@ -3,17 +3,17 @@ updates:
 
 # Scan everything
 
-  - package-ecosystem: maven
-    directory: "/"
-    schedule:
-      interval: daily
-    target-branch: "main"
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: "main"
 
-  - package-ecosystem: gradle
-    directory: "/"
-    schedule:
-      interval: daily
-    target-branch: "main"
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+  target-branch: "main"
   
 
 # Scan the initial folder and try to find bookstore and reading
@@ -107,8 +107,8 @@ updates:
   #   target-branch: "main"
     
     
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: "monthly"
+  target-branch: "main"
