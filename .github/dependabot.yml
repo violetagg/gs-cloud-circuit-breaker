@@ -1,77 +1,110 @@
 version: 2
 updates:
-  - package-ecosystem: "maven"
-    directory: "/initial/bookstore/"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
+
+# Scan everything
+
+  - package-ecosystem: maven
+    directory: "/"
     schedule:
-      interval: "monthly"
+      interval: daily
     target-branch: "main"
 
-  - package-ecosystem: "gradle"
-    directory: "/initial/bookstore/" 
-    ignore:
-      - dependency-name: "org.springframework.*"
-        update-types: ["version-update:semver-patch"]
+  - package-ecosystem: gradle
+    directory: "/"
     schedule:
-      interval: "monthly"
+      interval: daily
     target-branch: "main"
+  
 
-  - package-ecosystem: "maven"
-    directory: "/initial/reading/"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+# Scan the initial folder and try to find bookstore and reading
+  
+  # - package-ecosystem: "maven"
+  #   directory: "/initial"
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
 
-  - package-ecosystem: "gradle"
-    directory: "/initial/reading/" 
-    ignore:
-      - dependency-name: "org.springframework.*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+  # - package-ecosystem: "gradle"
+  #   directory: "/initial"
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
 
 
-  - package-ecosystem: "maven"
-    directory: "/complete/bookstore/"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+# Scan all individually
 
-  - package-ecosystem: "gradle"
-    directory: "/complete/bookstore/" 
-    ignore:
-      - dependency-name: "org.springframework.*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+  # - package-ecosystem: "maven"
+  #   directory: "/initial/bookstore/"
+  #   ignore:
+  #     - dependency-name: "*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
 
-  - package-ecosystem: "maven"
-    directory: "/complete/reading/"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+  # - package-ecosystem: "gradle"
+  #   directory: "/initial/bookstore/" 
+  #   ignore:
+  #     - dependency-name: "org.springframework.*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
 
-  - package-ecosystem: "gradle"
-    directory: "/complete/reading/" 
-    ignore:
-      - dependency-name: "org.springframework.*"
-        update-types: ["version-update:semver-patch"]
-    schedule:
-      interval: "monthly"
-    target-branch: "main"
+  # - package-ecosystem: "maven"
+  #   directory: "/initial/reading/"
+  #   ignore:
+  #     - dependency-name: "*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
+
+  # - package-ecosystem: "gradle"
+  #   directory: "/initial/reading/" 
+  #   ignore:
+  #     - dependency-name: "org.springframework.*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
+
+
+  # - package-ecosystem: "maven"
+  #   directory: "/complete/bookstore/"
+  #   ignore:
+  #     - dependency-name: "*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
+
+  # - package-ecosystem: "gradle"
+  #   directory: "/complete/bookstore/" 
+  #   ignore:
+  #     - dependency-name: "org.springframework.*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
+
+  # - package-ecosystem: "maven"
+  #   directory: "/complete/reading/"
+  #   ignore:
+  #     - dependency-name: "*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
+
+  # - package-ecosystem: "gradle"
+  #   directory: "/complete/reading/" 
+  #   ignore:
+  #     - dependency-name: "org.springframework.*"
+  #       update-types: ["version-update:semver-patch"]
+  #   schedule:
+  #     interval: "monthly"
+  #   target-branch: "main"
     
     
   - package-ecosystem: github-actions
